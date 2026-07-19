@@ -139,7 +139,15 @@ function Todos() {
         ) : (
           <div className="todo-list">
             {todos.map((todo) => (
-              <article className="todo-item" key={todo.id}>
+              <article
+                className="todo-item"
+                style={{
+                  borderColor: todo.completed
+                    ? "oklch(62.7% 0.194 149.214)"
+                    : "oklch(70.7% 0.022 261.325)",
+                }}
+                key={todo.id}
+              >
                 <button
                   className="todo-title"
                   type="button"
@@ -151,7 +159,15 @@ function Todos() {
                 </button>
 
                 <button
-                  className="delete-button"
+                  className={`button ${todo.completed ? "completed-button" : "not-completed-button"}`}
+                  type="button"
+                  onClick={() => toggleTodo(todo)}
+                >
+                  Done
+                </button>
+
+                <button
+                  className="button button-danger"
                   type="button"
                   onClick={() => deleteTodo(todo.id)}
                 >

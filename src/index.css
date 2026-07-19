@@ -112,6 +112,15 @@ button {
   border-radius: 10px;
 }
 
+.todo-item-completed {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
 .todo-title {
   flex: 1;
   padding: 0;
@@ -124,13 +133,27 @@ button {
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+  color: oklch(62.7% 0.194 149.214);
 }
 
-.delete-button {
+.button {
   padding: 8px 12px;
   border: 0;
   border-radius: 6px;
+  color: white;
+}
+
+.button-danger {
   background: #dc2626;
+}
+
+.completed-button {
+  background: oklch(62.7% 0.194 149.214);
+  color: white;
+}
+
+.not-completed-button {
+  background: oklch(70.7% 0.022 261.325);
   color: white;
 }
 
